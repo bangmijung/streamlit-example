@@ -18,11 +18,7 @@ st.header("Basic Example")
 
 items = [
     {"id": 1, "content": "2022-10-20", "start": "2022-10-20"},
-    {"id": 2, "content": "2022-10-09", "start": "2022-10-09"},
-    {"id": 3, "content": "2022-10-18", "start": "2022-10-18"},
-    {"id": 4, "content": "2022-10-16", "start": "2022-10-16"},
-    {"id": 5, "content": "2022-10-25", "start": "2022-10-25"},
-    {"id": 6, "content": "2022-10-27", "start": "2022-10-27"},
+    {"id": 2, "content": "2022-10-09", "start": "2022-10-09"}
 ]
 
 timeline = st_timeline(items, groups=[], options={}, height="300px")
@@ -45,53 +41,7 @@ items = [
         "editable": True,
         "start": "2022-08-23T23:00:00",
         "group": 2,
-    },
-    {
-        "id": 3,
-        "content": "Read-only",
-        "editable": False,
-        "start": "2022-08-24T16:00:00",
-        "group": 1,
-    },
-    {
-        "id": 4,
-        "content": "Read-only",
-        "editable": False,
-        "start": "2022-08-26",
-        "end": "2022-09-02",
-        "group": 2,
-    },
-    {
-        "id": 5,
-        "content": "editable",
-        "editable": True,
-        "start": "2022-08-28",
-        "group": 1,
-    },
-    {
-        "id": 6,
-        "content": "Read-only",
-        "editable": False,
-        "start": "2022-08-29",
-        "group": 2,
-    },
-    {
-        "id": 7,
-        "content": "editable",
-        "editable": True,
-        "start": "2022-08-31",
-        "end": "2022-09-03",
-        "group": 1,
-    },
-    {
-        "id": 8,
-        "content": "Read-only",
-        "editable": False,
-        "start": "2022-09-04T12:00:00",
-        "group": 2,
-    },
-    {"id": 9, "content": "Default", "start": "2022-09-04", "group": 1},
-    {"id": 10, "content": "Default", "start": "2022-08-24", "group": 2},
+    }
 ]
 
 
