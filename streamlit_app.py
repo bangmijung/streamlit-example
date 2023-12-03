@@ -44,7 +44,8 @@ tileType = "png"
 tiles = f"http://api.vworld.kr/req/wmts/1.0.0/{vworld_key}/{layer}/{{z}}/{{y}}/{{x}}.{tileType}"
 ###################################################################################################
 # 3. 병원 마커 찍기 (미완성)
-#df = pd.read_excel("C:/Users/bangm/Desktop/병원정보_기본.xlsx")
+df = pd.read_csv("https://raw.githubusercontent.com/bangmijung/streamlit-example/master/%EB%B3%91%EC%9B%90%EC%A0%95%EB%B3%B4%EC%84%9C%EB%B9%84%EC%8A%A4.csv")
+st.write(df.head())
 #target_df = df[((df["요양기관명"].str.contains("소아"))|(df["종별코드명"].isin(["상급종합", "종합병원"])))&(df["좌표(Y)"]>(lat_here-0.0091*3))&(df["좌표(Y)"]<(lat_here+0.0091*3))&(df["좌표(X)"]>(lng_here-0.0113*3))&(df["좌표(X)"]<(lng_here+0.0113*3))]
 
 # 3. 병원 마커 찍기 (미완성)
