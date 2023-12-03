@@ -177,7 +177,7 @@ if selection == None or selection == "menu1":
             # 예제1 (영업시작, 영업끝, 점심시작, 점심끝)
             with st.chat_message("assistant", avatar="🕐"):
                 st.write(" **영업시간 정보**")
-                start_edited, end_edited, lunch_start, lunch_end = find_time(medi_info, datetime.date(2023, 12, 04))#find_time(medi_info, datetime.datetime.today())
+                start_edited, end_edited, lunch_start, lunch_end = find_time(medi_info, datetime.datetime(2023, 12, 04))#find_time(medi_info, datetime.datetime.today())
                 if start_edited == None and end_edited == None:
                     st.write("오늘은 휴무일입니다. 다음에 방문해주세요!")
                 else:
