@@ -202,19 +202,19 @@ if selection == None or selection == "menu1":
                                                                     style="color: red")
                 create_timeline(items, groups)
             # 예제2 (주차장 정보)
-            #with st.chat_message("assistant", avatar="🚜"):
-                #st.write(" **주차장 정보:**")
-                #parking_info = find_parking_info(medi_info)
-                #st.write("1️⃣ **주차가능대수:** ", parking_info[0])
-                #if parking_info[1] == "N":
-                    #st.write("2️⃣ **주차지원여부:** ")
-                    #st.write("방문자 주차등록 가능")
-                #else:
-                    #st.write("2️⃣ **주차지원여부:**")
-                    #st.write("방문자 주차등록 가능")
-                #st.write("3️⃣ **주차관련안내:**")
-                #st.write(parking_info[2])
-            #st.form_submit_button("👩🏻‍⚕️병원 예약하러 가기", use_container_width=True)
+            with st.chat_message("assistant", avatar="🚜"):
+                st.write(" **주차장 정보:**")
+                parking_info = find_parking_info(medi_info)
+                st.write("1️⃣ **주차가능대수:** ", parking_info[0])
+                if parking_info[1] == "N":
+                    st.write("2️⃣ **주차지원여부:** ")
+                    st.write("방문자 주차등록 가능")
+                else:
+                    st.write("2️⃣ **주차지원여부:**")
+                    st.write("방문자 주차등록 가능")
+                st.write("3️⃣ **주차관련안내:**")
+                st.write(parking_info[2])
+            st.form_submit_button("👩🏻‍⚕️병원 예약하러 가기", use_container_width=True)
 ###################################################################################################################
 elif selection == "menu2":
     from streamlit_chat import message
