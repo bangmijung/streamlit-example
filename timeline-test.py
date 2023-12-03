@@ -46,8 +46,8 @@ items = [
 
 
 groups = [
-    {"id": 1, "content": "group 1", "style": "color: black; background-color: cyan;"},
-    {"id": 2, "content": "group 2", "style": "color: black; background-color: pink;"},
+    {"id": 1, "content": "group 1"},
+    {"id": 2, "content": "group 2"},
 ]
 
 timeline = st_timeline(items, groups=groups, options={}, height="300px")
