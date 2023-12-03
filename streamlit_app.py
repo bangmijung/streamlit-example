@@ -177,7 +177,7 @@ if selection == None or selection == "menu1":
             # 예제1 (영업시작, 영업끝, 점심시작, 점심끝)
             with st.chat_message("assistant", avatar="🕐"):
                 st.write(" **영업시간 정보**")
-                st.write(find_time(medi_info, today))
+                st.write(find_time(medi_info, datetime.datetime.today()))
  
             # 예제2 (주차장 정보)
             with st.chat_message("assistant", avatar="🚜"):
