@@ -181,7 +181,7 @@ if selection == None or selection == "menu1":
                 if start_edited == None and end_edited == None:
                     st.write("오늘은 휴무일입니다. 다음에 방문해주세요!")
                 else:
-                    st.write(f"⌛ 오늘의 영업시간은 {start_edited.hour()} 부터 {end_edited} 까지입니다.")
+                    st.write(f"⌛ 오늘의 영업시간은 {start_edited.hour} 부터 {end_edited} 까지입니다.")
                     st.write(f"🍚 병원의 점심시간은 {lunch_start} 부터 {lunch_end} 까지입니다.")
  
             # 예제2 (주차장 정보)
