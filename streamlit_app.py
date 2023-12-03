@@ -182,12 +182,12 @@ if selection == None or selection == "menu1":
                 from streamlit_timeline import st_timeline
                 start_edited, end_edited, lunch_start, lunch_end = find_time(medi_info, datetime.datetime.today())
                 items = ({"id": "1", "content": "오전영업", "start": "2023-11-22T08:00", "end": "2023-11-22T13:00", "group": "1","style": "color: black; background-color: white;"},
-                        {"id": "2", "content": "오후영업", "start": "2023-11-22T15:00", "end": "2023-11-22T19:00", "group": "1","style": "color: black; background-color: white;"},
-                        {"id": "3", "content": "점심시간", "start": "2023-11-22T13:00", "end": "2023-11-22T15:00", "group": "1","style": "color: black; background-color: red;"},
-                        {"id": "4", "content": "현재시각", "start": "2023-11-22T13:00", "type": "point", "group": "2"})
+                         {"id": "2", "content": "오후영업", "start": "2023-11-22T15:00", "end": "2023-11-22T19:00", "group": "1","style": "color: black; background-color: white;"},
+                         {"id": "3", "content": "점심시간", "start": "2023-11-22T13:00", "end": "2023-11-22T15:00", "group": "1","style": "color: black; background-color: red;"},
+                         {"id": "4", "content": "현재시각", "start": "2023-11-22T13:00", "type": "point", "group": "2"})
 
-               groups = ({"id": "1", "content": "🕐", "style": "color: black; background-color: white;"},
-                        #{"id": "2", "content": "✔", "style": "color: black; background-color: white;"})
+                groups = ({"id": "1", "content": "🕐", "style": "color: black; background-color: white;"},
+                          {"id": "2", "content": "✔", "style": "color: black; background-color: white;"})
 
                 @st.cache(suppress_st_warning=True)
                 def create_timeline(items, groups):
