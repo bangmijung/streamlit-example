@@ -189,8 +189,8 @@ if selection == None or selection == "menu1":
                 groups = ({"id": "1", "content": "🕐", "style": "color: black; background-color: white;"},
                           {"id": "2", "content": "✔", "style": "color: black; background-color: white;"})
 
-                def create_timeline(items, groups):
-                    timeline = st_timeline(items=items, groups=groups)#, options={"selectable": True,
+                #def create_timeline(items, groups):
+                #    timeline = st_timeline(items=items, groups=groups)#, options={"selectable": True,
                                                                        #         "multiselect": True, 
                                                                         #        "zoomable": True,
                                                                          #       "stack": False,
@@ -199,7 +199,7 @@ if selection == None or selection == "menu1":
                                                                             #    "groupHeightMode": "auto", 
                                                                              #   "orientation": {"axis": "top", "item": "top"}}, 
                                            #style="color: red")
-                create_timeline(items, groups)
+                #create_timeline(items, groups)
             # 예제2 (주차장 정보)
             with st.chat_message("assistant", avatar="🚜"):
                 st.write(" **주차장 정보:**")
