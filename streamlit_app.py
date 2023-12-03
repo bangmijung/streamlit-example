@@ -189,7 +189,6 @@ if selection == None or selection == "menu1":
                 groups = ({"id": "1", "content": "🕐", "style": "color: black; background-color: white;"},
                           {"id": "2", "content": "✔", "style": "color: black; background-color: white;"})
 
-                @st.cache(suppress_st_warning=True)
                 def create_timeline(items, groups):
                     timeline = st_timeline(items=items, groups=groups, options={"selectable": True,
                                                                     "multiselect": True, 
