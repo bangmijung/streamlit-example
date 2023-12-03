@@ -164,43 +164,43 @@ if selection == None or selection == "menu1":
 
     # [지도 그리기]
     st.write("📍현재위치: ", lat_here,lng_here)
-    #out = st_folium(m,zoom = zoom_idx, width=340, height=300)
-    #if out["last_object_clicked"] is not None:
-        #with st.form("test"):
-            #medi_cd = df[(df["좌표(Y)"]==out["last_object_clicked"]["lat"])&(df["좌표(X)"]==out["last_object_clicked"]["lng"])]["암호화요양기호"].reset_index()["암호화요양기호"][0]
-            #medi_info = get_medi_info(medi_cd)
+    out = st_folium(m,zoom = zoom_idx, width=340, height=300)
+    if out["last_object_clicked"] is not None:
+        with st.form("test"):
+            medi_cd = df[(df["좌표(Y)"]==out["last_object_clicked"]["lat"])&(df["좌표(X)"]==out["last_object_clicked"]["lng"])]["암호화요양기호"].reset_index()["암호화요양기호"][0]
+            medi_info = get_medi_info(medi_cd)
             # 클릭한 좌표에 맞는 병원정보
-            #with st.chat_message("assistant", avatar="🏥"):
-                #st.write("**"+out["last_object_clicked_tooltip"]+"**")
-                #st.write("📞 **병원 전화번호:**")
-                #st.write(df[df["암호화요양기호"]==medi_cd]["전화번호"].item())
-                #st.write("🧭 **병원 도로명주소:**")
-                #st.write(df[df["암호화요양기호"]==medi_cd]["주소"].item())
+            with st.chat_message("assistant", avatar="🏥"):
+                st.write("**"+out["last_object_clicked_tooltip"]+"**")
+                st.write("📞 **병원 전화번호:**")
+                st.write(df[df["암호화요양기호"]==medi_cd]["전화번호"].item())
+                st.write("🧭 **병원 도로명주소:**")
+                st.write(df[df["암호화요양기호"]==medi_cd]["주소"].item())
             # 예제1 (영업시작, 영업끝, 점심시작, 점심끝)
-            #with st.chat_message("assistant", avatar="🕐"):
-                #st.write(" **영업시간 정보**")
-                #from streamlit_timeline import st_timeline
-                #start_edited, end_edited, lunch_start, lunch_end = find_time(medi_info, datetime.datetime.today())
-                #items = ({"id": "1", "content": "오전영업", "start": "2023-11-22T08:00", "end": "2023-11-22T13:00", "group": "1","style": "color: black; background-color: white;"},
-                        #{"id": "2", "content": "오후영업", "start": "2023-11-22T15:00", "end": "2023-11-22T19:00", "group": "1","style": "color: black; background-color: white;"},
-                        #{"id": "3", "content": "점심시간", "start": "2023-11-22T13:00", "end": "2023-11-22T15:00", "group": "1","style": "color: black; background-color: red;"},
-                        #{"id": "4", "content": "현재시각", "start": "2023-11-22T13:00", "type": "point", "group": "2"})
+            with st.chat_message("assistant", avatar="🕐"):
+                st.write(" **영업시간 정보**")
+                from streamlit_timeline import st_timeline
+                start_edited, end_edited, lunch_start, lunch_end = find_time(medi_info, datetime.datetime.today())
+                items = ({"id": "1", "content": "오전영업", "start": "2023-11-22T08:00", "end": "2023-11-22T13:00", "group": "1","style": "color: black; background-color: white;"},
+                        {"id": "2", "content": "오후영업", "start": "2023-11-22T15:00", "end": "2023-11-22T19:00", "group": "1","style": "color: black; background-color: white;"},
+                        {"id": "3", "content": "점심시간", "start": "2023-11-22T13:00", "end": "2023-11-22T15:00", "group": "1","style": "color: black; background-color: red;"},
+                        {"id": "4", "content": "현재시각", "start": "2023-11-22T13:00", "type": "point", "group": "2"})
 
-               # groups = ({"id": "1", "content": "🕐", "style": "color: black; background-color: white;"},
+               groups = ({"id": "1", "content": "🕐", "style": "color: black; background-color: white;"},
                         #{"id": "2", "content": "✔", "style": "color: black; background-color: white;"})
 
-                # @st.cache(suppress_st_warning=True)
-                #def create_timeline(items, groups):
-                    #timeline = st_timeline(items=items, groups=groups, options={"selectable": True,
-                                                                    #"multiselect": True, 
-                                                                    #"zoomable": True, 
-                                                                    #"stack": False, 
-                                                                    #"height": 154, 
-                                                                    #"margin": {"axis": 5}, 
-                                                                    #"groupHeightMode": "auto", 
-                                                                    #"orientation": {"axis": "top", "item": "top"}}, 
-                                                                    #style="color: red")
-                #create_timeline(items, groups)
+                @st.cache(suppress_st_warning=True)
+                def create_timeline(items, groups):
+                    timeline = st_timeline(items=items, groups=groups, options={"selectable": True,
+                                                                    "multiselect": True, 
+                                                                    "zoomable": True, 
+                                                                    "stack": False, 
+                                                                    "height": 154, 
+                                                                    "margin": {"axis": 5}, 
+                                                                    "groupHeightMode": "auto", 
+                                                                    "orientation": {"axis": "top", "item": "top"}}, 
+                                                                    style="color: red")
+                create_timeline(items, groups)
             # 예제2 (주차장 정보)
             #with st.chat_message("assistant", avatar="🚜"):
                 #st.write(" **주차장 정보:**")
