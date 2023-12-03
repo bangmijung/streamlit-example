@@ -3,6 +3,7 @@ streamlit-option-menu
 streamlit-chat
 folium
 streamlit-folium
+streamlit-timeline
 openai
 deepl
 xmltodict
