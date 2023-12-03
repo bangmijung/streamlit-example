@@ -45,7 +45,7 @@ tiles = f"http://api.vworld.kr/req/wmts/1.0.0/{vworld_key}/{layer}/{{z}}/{{y}}/{
 ###################################################################################################
 # 3. 병원 마커 찍기 (미완성)
 df = pd.read_csv("https://raw.githubusercontent.com/bangmijung/streamlit-example/master/%EB%B3%91%EC%9B%90%EC%A0%95%EB%B3%B4_%EA%B8%B0%EB%B3%B8.csv")
-target_df = df[((df["요양기관명"].str.contains("소아"))|(df["종별코드명"].isin(["상급종합", "종합병원"])))&(df["좌표(Y)"]>(lat_here-0.0091*3))&(df["좌표(Y)"]<(lat_here+0.0091*3))&(df["좌표(X)"]>(lng_here-0.0113*3))&(df["좌표(X)"]<(lng_here+0.0113*3))]
+target_df = df[((df["요양기관명"].str.contains("소아"))|(df["종별코드명"].isin(["상급종합", "종합병원"])))&(df["좌표(Y)"]>(lat_here-0.0091*4))&(df["좌표(Y)"]<(lat_here+0.0091*4))&(df["좌표(X)"]>(lng_here-0.0113*4))&(df["좌표(X)"]<(lng_here+0.0113*4))]
 
 # 3. 병원 마커 찍기 (미완성)
 def map_mark(lat_here, lng_here):
