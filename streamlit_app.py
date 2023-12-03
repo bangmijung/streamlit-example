@@ -191,14 +191,14 @@ if selection == None or selection == "menu1":
 
                 def create_timeline(items, groups):
                     timeline = st_timeline(items=items, groups=groups, options={"selectable": True,
-                                                                    "multiselect": True, 
-                                                                    "zoomable": True, 
-                                                                    "stack": False, 
-                                                                    "height": 154, 
-                                                                    "margin": {"axis": 5}, 
-                                                                    "groupHeightMode": "auto", 
-                                                                    "orientation": {"axis": "top", "item": "top"}}, 
-                                                                    style="color: red")
+                                                                                "multiselect": True, 
+                                                                                "zoomable": True,
+                                                                                "stack": False,
+                                                                                "height": 154, 
+                                                                                "margin": {"axis": 5}, 
+                                                                                "groupHeightMode": "auto", 
+                                                                                "orientation": {"axis": "top", "item": "top"}}, 
+                                           style="color: red")
                 create_timeline(items, groups)
             # 예제2 (주차장 정보)
             with st.chat_message("assistant", avatar="🚜"):
