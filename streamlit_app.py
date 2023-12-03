@@ -200,6 +200,19 @@ if selection == None or selection == "menu1":
                                                                              #   "orientation": {"axis": "top", "item": "top"}}, 
                                            #style="color: red")
                 #create_timeline(items, groups)
+                items = [
+                {"id": 1, "content": "2022-10-20", "start": "2022-10-20"},
+                {"id": 2, "content": "2022-10-09", "start": "2022-10-09"},
+                {"id": 3, "content": "2022-10-18", "start": "2022-10-18"},
+                {"id": 4, "content": "2022-10-16", "start": "2022-10-16"},
+                {"id": 5, "content": "2022-10-25", "start": "2022-10-25"},
+                {"id": 6, "content": "2022-10-27", "start": "2022-10-27"},
+            ]
+            
+            timeline = st_timeline(items, groups=[], options={}, height="300px")
+            st.subheader("Selected item")
+            st.write(timeline)
+
             # 예제2 (주차장 정보)
             with st.chat_message("assistant", avatar="🚜"):
                 st.write(" **주차장 정보:**")
