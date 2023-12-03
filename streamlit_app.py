@@ -4,7 +4,7 @@ import sqlite3
 import datetime
 ###################################################################################################
 # 0. page config & title
-st.set_page_config(layout="centered", page_title="for 테스트", page_icon="🚀")
+st.set_page_config(layout="centered", page_title="미정_테스트", page_icon="🚀")
 
 from streamlit_option_menu import option_menu
 selected3 = option_menu(None, ["menu1", "menu2",  "menu3"], 
@@ -44,28 +44,27 @@ tileType = "png"
 tiles = f"http://api.vworld.kr/req/wmts/1.0.0/{vworld_key}/{layer}/{{z}}/{{y}}/{{x}}.{tileType}"
 ###################################################################################################
 # 3. 병원 마커 찍기 (미완성)
-df = pd.read_csv("https://raw.githubusercontent.com/bangmijung/streamlit-example/master/%EB%B3%91%EC%9B%90%EC%A0%95%EB%B3%B4%EC%84%9C%EB%B9%84%EC%8A%A4.csv")
-st.write(df.head())
-#target_df = df[((df["요양기관명"].str.contains("소아"))|(df["종별코드명"].isin(["상급종합", "종합병원"])))&(df["좌표(Y)"]>(lat_here-0.0091*3))&(df["좌표(Y)"]<(lat_here+0.0091*3))&(df["좌표(X)"]>(lng_here-0.0113*3))&(df["좌표(X)"]<(lng_here+0.0113*3))]
+df = pd.read_csv("https://raw.githubusercontent.com/bangmijung/streamlit-example/master/%EB%B3%91%EC%9B%90%EC%A0%95%EB%B3%B4_%EA%B8%B0%EB%B3%B8.csv")
+target_df = df[((df["요양기관명"].str.contains("소아"))|(df["종별코드명"].isin(["상급종합", "종합병원"])))&(df["좌표(Y)"]>(lat_here-0.0091*3))&(df["좌표(Y)"]<(lat_here+0.0091*3))&(df["좌표(X)"]>(lng_here-0.0113*3))&(df["좌표(X)"]<(lng_here+0.0113*3))]
 
 # 3. 병원 마커 찍기 (미완성)
-#def map_mark(lat_here, lng_here):
-    #from folium.plugins import MarkerCluster
-    #m = folium.Map(location=[lat_here, lng_here],tiles=tiles,attr="Vworld", zoom_start=15)
-    #marker_cluster = MarkerCluster().add_to(m)
-    #for name, lat, long in (zip(target_df["요양기관명"], target_df["좌표(Y)"], target_df["좌표(X)"])):
-        #if math.isnan(lat)==False and math.isnan(long)==False:
-            #iframe = folium.IFrame("<button type=\"button\" onclick=\"window.open('https://map.naver.com/p/search/%EC%86%8C%EC%95%84%EA%B3%BC')\" style=\"width:150px;\">예약페이지로 이동</button>")
-            #popup = folium.Popup(iframe, min_height=40, max_height=40, min_width=180, max_width=180)
-            #folium.Marker(
-                #[lat, long], 
-                #popup=popup, 
-                #tooltip=name,
-            #).add_to(m)
+def map_mark(lat_here, lng_here):
+    from folium.plugins import MarkerCluster
+    m = folium.Map(location=[lat_here, lng_here],tiles=tiles,attr="Vworld", zoom_start=15)
+    marker_cluster = MarkerCluster().add_to(m)
+    for name, lat, long in (zip(target_df["요양기관명"], target_df["좌표(Y)"], target_df["좌표(X)"])):
+        if math.isnan(lat)==False and math.isnan(long)==False:
+            iframe = folium.IFrame("<button type=\"button\" onclick=\"window.open('https://map.naver.com/p/search/%EC%86%8C%EC%95%84%EA%B3%BC')\" style=\"width:150px;\">예약페이지로 이동</button>")
+            popup = folium.Popup(iframe, min_height=40, max_height=40, min_width=180, max_width=180)
+            folium.Marker(
+                [lat, long], 
+                popup=popup, 
+                tooltip=name,
+            ).add_to(m)
             
-    #return m
+    return m
 
-#m = map_mark(lat_here, lng_here)
+m = map_mark(lat_here, lng_here)
 ###################################################################################################
 # 4. 병원 세부정보
 import json
@@ -164,7 +163,7 @@ if selection == None or selection == "menu1":
         zoom_idx=12
 
     # [지도 그리기]
-    #st.write("📍현재위치: ", lat_here,lng_here)
+    st.write("📍현재위치: ", lat_here,lng_here)
     #out = st_folium(m,zoom = zoom_idx, width=340, height=300)
     #if out["last_object_clicked"] is not None:
         #with st.form("test"):
